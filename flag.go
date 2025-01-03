@@ -868,7 +868,6 @@ func (f *FlagSet) AddFlag(flag *Flag) {
 	if len(flag.Shorthand) > 1 {
 		msg := fmt.Sprintf("%q shorthand is more than one ASCII character", flag.Shorthand)
 		fmt.Fprintf(f.Output(), msg)
-		panic(msg)
 	}
 	if f.shorthands == nil {
 		f.shorthands = make(map[byte]*Flag)
